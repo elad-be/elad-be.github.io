@@ -37,14 +37,14 @@
 
 
 
-Device ID:-----------<input id="myDeviceId" name="myCoreID" type=text size=50 placeholder="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
+Device ID:-----------<input id="myDeviceId" visibility="hidden" name="myCoreID" type=text size=50 placeholder="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
 Get this from the core area when logged in<br>
 
 
-Function Name:-----<input id="myFunctionName" name="myFunction"  type=text size=50 value="my-main" > 
+Function Name:-----<input id="myFunctionName" name="myFunction" visibility="hidden" type=text size=50 value="my-main" > 
 Get this from the program you flashed to your spark core<br>
 
-Set the parameters yourself:--<select size=1 onChange="{
+Set the parameters yourself:--<select size=1 visibility="hidden" onChange="{
   document.all.myParameter.value=this.value
 }">
     <option value='d7-send-high'>d7-send-high</option>
