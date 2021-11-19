@@ -271,28 +271,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
     //console.log("DOM fully loaded and parsed");
     checkIfDeviceIsConnected();
     
-    hueSlider       = document.getElementById("hue_slider");
-    hueValueLabel   = document.getElementById("hue_value");
 
-    satSlider       = document.getElementById("sat_slider");
-    satValueLabel   = document.getElementById("sat_value");
-
-    briSlider       = document.getElementById("bri_slider");
-    briValueLabel   = document.getElementById("bri_value");
-
-    rateLimitSwitch = document.getElementById("switch1");
-    transmitButton  = document.getElementById("transmit");
-    durationChip    = document.getElementById("duration_chip");
-    
-    snackbarDialog  = document.getElementById("snackbar_dialog");
     btn  = document.getElementById("h");
     btn1  = document.getElementById("h1");
     
     // Set the labels and the variables to the default value (set in the html)
-    hueValueLabel.innerHTML = hue        = hueSlider.value;// = 180;
-    satValueLabel.innerHTML = saturation = satSlider.value;// = 255;
-    briValueLabel.innerHTML = brightness = briSlider.value;// = 255;
-    
+
     //range-slider touch fix (doesn't seem to do anything...)
     //https://github.com/sampotts/rangetouch
     window.rangetouch.set("thumbWidth", 32);
