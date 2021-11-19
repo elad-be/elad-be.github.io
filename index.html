@@ -37,14 +37,13 @@
 
 
 
-Device ID:-----------<input id="myDeviceId" style="visibility:hidden;" name="myCoreID" type=text size=50 placeholder="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
-Get this from the core area when logged in<br>
+<input id="myDeviceId" style="visibility:hidden;" name="myCoreID" type=text size=50 placeholder="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
 
 
-Function Name:-----<input id="myFunctionName" name="myFunction" visibility="hidden" type=text size=50 value="my-main" > 
-Get this from the program you flashed to your spark core<br>
 
-Set the parameters yourself:--<select size=1 visibility="hidden" onChange="{
+<input id="myFunctionName" name="myFunction" style="visibility:hidden;" type=text size=50 value="my-main" > 
+
+<select size=1 style="visibility:hidden;" onChange="{
   document.all.myParameter.value=this.value
 }">
     <option value='d7-send-high'>d7-send-high</option>
@@ -63,16 +62,12 @@ Set the parameters yourself:--<select size=1 visibility="hidden" onChange="{
 
 
 
-<hr>
-Start form elements to be sent including the acces_token and the parameters
-
 
 <form name="myForm" method="POST" action = "https://api.spark.io/v1/devices/sparkCoreName/myTurnOn" target="myFrameName"><br>
 
 Parameter if needed:<input id="myParameter" name="params" type=text size=50 placeholder="D7,DWR,HIGH"> Your Function may need these <br>
 
-Access Token:-------<input id="myToken" name="access_token" type=text size=50 value="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
-Get this from the settings area when logged into <a href="http://spark.io">http://spark.io</a><br><br>
+<input id="myToken" name="access_token" type=text size=50 style="visibility:hidden;" value="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
 
 
 <input type=button value="Light a Candle!" onClick="{
