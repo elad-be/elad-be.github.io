@@ -1,9 +1,43 @@
 <html>
 <head>
 
+<style>
+  body{
+  background: url("https://4.bp.blogspot.com/-nga7ILVOT1A/XU-uD-raToI/AAAAAAAATq8/uzTMLp9hKdEAuWxLrdD-UGZ2E_VQWE2wgCLcBGAs/s1600/normal_5c76246c5d34f.gif"), url("https://www.yuvalim.co.il/images/yuvalim/p17db88mcr8qp1di4k829h91qu01.gif"),
+   url("https://3.bp.blogspot.com/-38o12FDZbNk/XU-uEx-gW-I/AAAAAAAATrI/M-lolrtTNTQgpWFUbbhkAMz3g8LRGu_rgCLcBGAs/s1600/normal_5c765bd609f92.gif");
+  background: url("https://3.bp.blogspot.com/-5Z3KCuP-KmA/XU-uASNfWVI/AAAAAAAATqU/GxsVE-x8gGsfjk_ypgcbWXtB7fl0P-mgwCLcBGAs/s1600/normal_5c76217bc9b3f.gif");
+  background: url("https://4.bp.blogspot.com/-nga7ILVOT1A/XU-uD-raToI/AAAAAAAATq8/uzTMLp9hKdEAuWxLrdD-UGZ2E_VQWE2wgCLcBGAs/s1600/normal_5c76246c5d34f.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+font-size: 30px;
+font-family:  Copperplate;
 
-<title>Post Spark Core </title>
+
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+</style>
+<title>GAGA'S Competition </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
+
 
 <body onload="{
    myStorage1 = localStorage.getItem('myStoredText1')
@@ -28,48 +62,27 @@
   
 
 
+<h2><mark>Elad & Itoosh</mark></h1>
 
 
-
-
-
-4Type in the boxes then click submit to activate your Spark Core or Photon.<br>
-
-
-
-<input id="myDeviceId" style="visibility:hidden;" name="myCoreID" type=text size=50 placeholder="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
-
-
-
-<input id="myFunctionName" name="myFunction" style="visibility:hidden;" type=text size=50 value="my-main" > 
 
 <select size=1 style="visibility:hidden;" onChange="{
   document.all.myParameter.value=this.value
 }">
-    <option value='d7-send-high'>d7-send-high</option>
-    <option value='D7-SEND-OFF'>D7-SEND-OFF</option>
-    <option value='d7-send-on'>d7-send-on</option>
-    <option value='d7-send-off'>d7-send-off</option>
-    <option value='d6-send-1'>d6-send-1</option>
-    <option value='d6-send-0'>d6-send-0</option>
-    <option value='d5-read'>d5-read</option>
-    <option value=''></option>
-    <option value='a0-send-0'>a0-send-0</option>
-    <option value='a0-send-255'>a0-send-255</option>
-    <option value='a1-read'>a1-read</option>
+
 </select>
 
 
 
 
 
-<form name="myForm" method="POST" action = "https://api.spark.io/v1/devices/sparkCoreName/myTurnOn" target="myFrameName"><br>
+<form name="myForm" method="POST" action = "https://api.spark.io/v1/devices/sparkCoreName/myTurnOn" target="myFrameName">
+<input id="myParameter" name="params" type=text size=50 placeholder="what's your fucking name?!"> 
 
-Name <br><input id="myParameter" name="params" type=text size=50 placeholder="D7,DWR,HIGH"> 
 
 <input id="myToken" name="access_token" type=text size=50 style="visibility:hidden;" value="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
 
-
+<br>
 <input type=button value="Light a Candle!" onClick="{
     document.myForm.action = 'https://api.spark.io/v1/devices/' + '1c002f000c47353136383631' + '/' + 'setHSB'
     document.all.mySend.value = document.myForm.action 
@@ -81,11 +94,15 @@ Name <br><input id="myParameter" name="params" type=text size=50 placeholder="D7
 
 </form>
 
-<hr>
+
+<input id="myDeviceId" style="visibility:hidden;" name="myCoreID" type=text size=50 placeholder="17d852df6fb6cb0f6d7f11caeb8f8822670eaffa"> 
 
 
 
-<input type="button" value="Store Spark Token and ID locally!" onClick="{
+<input id="myFunctionName" name="myFunction" style="visibility:hidden;" type=text size=50 value="my-main" > 
+
+
+<input type="button" style="visibility:hidden;" value="Store Spark Token and ID locally!" onClick="{
    localStorage.setItem('myStoredText1', document.all.myToken.value)   
    localStorage.setItem('myStoredText2', document.all.myDeviceId.value)
    alert( document.all.myToken.value + ' ' +document.all.myDeviceId.value + ' \nHas been stored')
@@ -93,20 +110,20 @@ Name <br><input id="myParameter" name="params" type=text size=50 placeholder="D7
 
 
 
-<input type="button" value="Hide Sensitive"  onClick="{
+<input type="button" style="visibility:hidden;" value="Hide Sensitive"  onClick="{
     document.all.myToken.style.visibility = 'hidden'
     document.all.mySend.style.visibility = 'hidden'
     document.all.myFrameId.style.visibility = 'hidden'
     document.all.myDeviceId.style.visibility = 'hidden'
 }">
 
-<input type="button" value="Show Sensitive" style="background-color:lime" onClick="{
+<input type="button" style="visibility:hidden;" value="Show Sensitive" style="background-color:lime" onClick="{
     document.all.myToken.style.visibility = 'visible'
     document.all.mySend.style.visibility = 'visible'
     document.all.myFrameId.style.visibility = 'visible'
     document.all.myDeviceId.style.visibility = 'visible'
 }">
-<input type="button" value="Show Output Only"  onClick="{
+<input type="button" style="visibility:hidden;" value="Show Output Only"  onClick="{
     document.all.myFrameId.style.visibility = 'visible'
 }">
 
@@ -115,14 +132,12 @@ Name <br><input id="myParameter" name="params" type=text size=50 placeholder="D7
 <br><br>
 
 
-You sent a command similar to (timeout can be 30 seconds long):Notice your access_token and Params are not visible 
-since they are sent using POST which safely hides them
 <br>
-<textarea rows=5 cols=70 id="mySend">https://api.spark.io/v1/devices/55gg76065075555387781787/d7-on</textarea><br>
+<textarea rows=5 cols=70 style="visibility:hidden;" id="mySend">https://api.spark.io/v1/devices/55gg76065075555387781787/d7-on</textarea><br>
 
 
-What is returned from the spark cloud server goes below here. Should be under 2 seconds<br>
-<iframe width="400" height="200" name="myFrameName" id="myFrameId">
+
+<iframe width="400" style="visibility:hidden;"  height="200" name="myFrameName" id="myFrameId">
 
 
 
@@ -131,9 +146,8 @@ What is returned from the spark cloud server goes below here. Should be under 2 
 
 
 
-<br>At the bottom of every page make sure you include the following button:<br>
-<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
 
+<input type=button value="Back" style="visibility:hidden;" style="font-size:25px" onclick="{window.history.back()}"><br><br>
 
 </body>
 </html>
