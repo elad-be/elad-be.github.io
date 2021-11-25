@@ -67,9 +67,17 @@ input[type=text] {
 
 
   
-<h2><mark>Elad & Itoosh10</mark></h2>
+<h2><mark>Elad & Itoosh7</mark></h2>
 <h2><mark>Hanukkah Escape Room</mark></h2>
 
+<div style="display:flex;justify-content:center;align-items:center;display: none;">
+  <div style="width:400px;height:300px;">
+      <div data-video="7pZ6Z9Wm1Ac" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
+      <div style="clear:both;margin:10px;text-align:center">
+         
+      </div>
+  </div>
+</div>
 
 
 <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
@@ -170,14 +178,16 @@ function onPlayerStateChange(event) {
     document.all.mySend.value = document.myForm.action 
 
 
+    var hashval = cyrb53(document.all.myParameter.value)
+    if (hashval== '3742040245641759'){
+      player.seekTo(41);
+      player.playVideo(); 
+
+    }
     
+   
 
-  `if(cyrb53(document.all.myParameter.value)== '3742040245641759'){
-    player.seekTo(41);
-    player.playVideo(); 
-  }
-
-   if (cyrb53(document.all.myParameter.value)== '5927615291986063'){
+   if (hashval== '5927615291986063'){
     alert('Noya - ask Elad for your instument!');
   }
  
@@ -242,13 +252,6 @@ function onPlayerStateChange(event) {
 
 
 <input type=button value="Back" style="visibility:hidden;" style="font-size:25px" onclick="{window.history.back()}"><br><br>
-<div style="display:flex;justify-content:center;align-items:center;visibility: hidden;">
-  <div style="width:400px;height:300px;">
-      <div data-video="7pZ6Z9Wm1Ac" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
-      <div style="clear:both;margin:10px;text-align:center">
-         
-      </div>
-  </div>
-</div>
+
 </body>
 </html>
