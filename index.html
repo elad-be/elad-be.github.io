@@ -6,7 +6,7 @@
   background: url("https://4.bp.blogspot.com/-nga7ILVOT1A/XU-uD-raToI/AAAAAAAATq8/uzTMLp9hKdEAuWxLrdD-UGZ2E_VQWE2wgCLcBGAs/s1600/normal_5c76246c5d34f.gif"), url("https://www.yuvalim.co.il/images/yuvalim/p17db88mcr8qp1di4k829h91qu01.gif"),
    url("https://3.bp.blogspot.com/-38o12FDZbNk/XU-uEx-gW-I/AAAAAAAATrI/M-lolrtTNTQgpWFUbbhkAMz3g8LRGu_rgCLcBGAs/s1600/normal_5c765bd609f92.gif");
   background: url("https://3.bp.blogspot.com/-5Z3KCuP-KmA/XU-uASNfWVI/AAAAAAAATqU/GxsVE-x8gGsfjk_ypgcbWXtB7fl0P-mgwCLcBGAs/s1600/normal_5c76217bc9b3f.gif");
-  background: url("https://4.bp.blogspot.com/-nga7ILVOT1A/XU-uD-raToI/AAAAAAAATq8/uzTMLp9hKdEAuWxLrdD-UGZ2E_VQWE2wgCLcBGAs/s1600/normal_5c76246c5d34f.gif") no-repeat center center fixed; 
+  background: url("https://3.bp.blogspot.com/-5Z3KCuP-KmA/XU-uASNfWVI/AAAAAAAATqU/GxsVE-x8gGsfjk_ypgcbWXtB7fl0P-mgwCLcBGAs/s1600/normal_5c76217bc9b3f.gif") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -57,7 +57,9 @@ input[type=text] {
        document.getElementById('myDeviceId').value = myStorage2 
       
     }
-    
+  
+  
+
       
 }">
 
@@ -67,6 +69,89 @@ input[type=text] {
   
 <h2><mark>Elad & Itoosh</mark></h2>
 <h2><mark>Hanukkah Escape Room</mark></h2>
+
+<div style="display:flex;justify-content:center;align-items:center;display: none;">
+  <div style="width:400px;height:300px;">
+      <div data-video="7pZ6Z9Wm1Ac" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
+      <div style="clear:both;margin:10px;text-align:center">
+         
+      </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+<script>
+
+var player;
+function onYouTubeIframeAPIReady() {
+
+  var ctrlq = document.getElementById("youtube-audio");
+  ctrlq.innerHTML = '<img id="youtube-icon" src=""/><div id="youtube-player"></div>';
+  ctrlq.style.cssText = 'width:150px;margin:2em auto;cursor:pointer;cursor:hand;display:none';
+  ctrlq.onclick = toggleAudio;
+
+  player = new YT.Player('youtube-player', {
+    height: '0',
+    width: '0',
+    videoId: ctrlq.dataset.video,
+    startSeconds: 41, 
+    playerVars: {
+      autoplay: ctrlq.dataset.autoplay,
+      loop: ctrlq.dataset.loop,
+
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange 
+    } 
+  });
+} 
+
+function togglePlayButton(play) {    
+  document.getElementById("youtube-icon").src = play ? "https://i.imgur.com/IDzX9gL.png" : "https://i.imgur.com/quyUPXN.png";
+}
+
+function toggleAudio() {
+  if ( player.getPlayerState() == 1 || player.getPlayerState() == 3 ) {
+    player.pauseVideo(); 
+    togglePlayButton(false);
+  } else {
+    player.seekTo(41);
+    player.playVideo(); 
+    togglePlayButton(true);
+  } 
+} 
+
+function onPlayerReady(event) {
+  player.setPlaybackQuality("small");
+  document.getElementById("youtube-audio").style.display = "block";
+  togglePlayButton(player.getPlayerState() !== 5);
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === 0) {
+    togglePlayButton(false); 
+  }
+}
+
+const cyrb53 = function(str, seed = 0) {
+    let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+    for (let i = 0, ch; i < str.length; i++) {
+        ch = str.charCodeAt(i);
+        h1 = Math.imul(h1 ^ ch, 2654435761);
+        h2 = Math.imul(h2 ^ ch, 1597334677);
+    }
+    h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+    return 4294967296 * (2097151 & h2) + (h1>>>0);
+};
+
+
+</script>
+
+
+
 
 
 
@@ -88,9 +173,27 @@ input[type=text] {
 
 <br>
 <input type=button value="Light a Candle!" onClick="{
+
     document.myForm.action = 'https://api.spark.io/v1/devices/' + '1c002f000c47353136383631' + '/' + 'setHSB'
     document.all.mySend.value = document.myForm.action 
-   if (document.all.myParameter.value== 'plants guru'){
+
+
+    var hashval = cyrb53(document.all.myParameter.value);
+
+
+    var hashes = ['5927615291986063', '3742040245641759'];
+
+
+    if (hashes.includes(String(hashval))){
+      player.seekTo(41);
+      player.playVideo(); 
+
+    }
+    
+   
+  
+
+   if (hashval== '5927615291986063'){
     alert('Noya - ask Elad for your instument!');
   }
  
