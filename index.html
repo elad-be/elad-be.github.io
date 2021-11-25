@@ -185,7 +185,7 @@ function onPlayerStateChange(event) {
     //['a', 'b', 'c'].includes('b')
 
 
-    if (String(hashes).includes(hashval)){
+    if (hashes.includes(String(hashval))){
       player.seekTo(41);
       player.playVideo(); 
 
