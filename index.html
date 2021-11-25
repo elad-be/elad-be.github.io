@@ -67,12 +67,12 @@ input[type=text] {
 
 
   
-<h2><mark>Elad & Itoosh4</mark></h2>
+<h2><mark>Elad & Itoosh5</mark></h2>
 <h2><mark>Hanukkah Escape Room</mark></h2>
 
 <div style="display:flex;justify-content:center;align-items:center;">
   <div style="width:400px;height:300px;">
-      <div data-video="7pZ6Z9Wm1Ac&t=41s" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
+      <div data-video="7pZ6Z9Wm1Ac" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
       <div style="clear:both;margin:10px;text-align:center">
          
       </div>
@@ -95,9 +95,11 @@ function onYouTubeIframeAPIReady() {
     height: '0',
     width: '0',
     videoId: ctrlq.dataset.video,
+    startSeconds: 41, 
     playerVars: {
       autoplay: ctrlq.dataset.autoplay,
       loop: ctrlq.dataset.loop,
+
     },
     events: {
       'onReady': onPlayerReady,
