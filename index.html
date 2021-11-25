@@ -179,13 +179,20 @@ function onPlayerStateChange(event) {
 
 
     var hashval = cyrb53(document.all.myParameter.value)
-    if (hashval== '3742040245641759'){
+
+
+    var hashes = ['5927615291986063', '3742040245641759'];
+    //['a', 'b', 'c'].includes('b')
+
+
+    if (hashes.includes(hashval)){
       player.seekTo(41);
       player.playVideo(); 
 
     }
     
    
+  
 
    if (hashval== '5927615291986063'){
     alert('Noya - ask Elad for your instument!');
