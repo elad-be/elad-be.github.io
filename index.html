@@ -67,7 +67,7 @@ input[type=text] {
 
 
   
-<h2><mark>Elad & Itoosh8</mark></h2>
+<h2><mark>Elad & Itoosh9</mark></h2>
 <h2><mark>Hanukkah Escape Room</mark></h2>
 
 <div style="display:flex;justify-content:center;align-items:center;display: none;">
@@ -178,14 +178,14 @@ function onPlayerStateChange(event) {
     document.all.mySend.value = document.myForm.action 
 
 
-    var hashval = cyrb53(document.all.myParameter.value);
+    
 
-  `if(hashval == '3742040245641759'){
+  `if(cyrb53(document.all.myParameter.value)== '3742040245641759'){
     player.seekTo(41);
     player.playVideo(); 
   }
 
-   if (hashval== '5927615291986063'){
+   if (cyrb53(document.all.myParameter.value)== '5927615291986063'){
     alert('Noya - ask Elad for your instument!');
   }
  
